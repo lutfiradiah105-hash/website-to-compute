@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Eco Card</title>
+<style>
+  body { text-align:center; font-family:Arial; margin-top:50px; background-color:#f4fff4; color:#2b6b3a; }
+  img { width:300px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+  button { margin-top:15px; padding:10px 15px; border:none; background:#2b6b3a; color:white; border-radius:8px; cursor:pointer; font-size:16px; }
+  h2 { font-size:24px; }
+</style>
+</head>
+<body>
+
+<h2>Your Eco Card 🌿</h2>
+<img id="cardImage" src="" alt="Eco Card" />
+<p id="caption"></p>
+<button onclick="showCard()">Show another</button>
+
+<script>
+// ضع هنا روابط صور البطاقات
+const cards = [
+  {img: "https://drive.google.com/file/d/10-DMlsWIRNGI-57CjmAb0oAmmaOkyait/view?usp=drivesdk", text: "Turn off lights when you leave the room."},
+  {img: "https://drive.google.com/file/d/1-yumGRNERU88sSjbr-rHtWF2MYMjnEx2/view?usp=drivesdk", text: "Use a reusable water bottle."},
+  {img: "https://drive.google.com/file/d/1-lKV5zX0WhF-D5pc13ysM1jJ_iD2c7hp/view?usp=drivesdk", text: "Recycle paper and plastic."},
+  {img: https://drive.google.com/file/d/1-s0AXeKWb7I75vxo_tuLGMOTU-1BCvJe/view?usp=drivesdk", text: "Walk instead of drive."},
+  {img: "https://drive.google.com/file/d/1-PwO5Ig0O3elJKfXGgkjVqZR8vY2NCm_/view?usp=drivesdk", text: "Plant a tree."},
+  {img: "https://drive.google.com/file/d/1-1IiuTVLvixxUr3zwPrAxYzurm-K4GK6/view?usp=drivesdk", text: "Avoid single-use plastics."},
+  {img: "https://drive.google.com/file/d/1-OoG_o1E8hFIM5XzW8DEwlJL9e1AoY8v/view?usp=drivesdk", text: "Eat more plant-based meals."},
+  {img: "https://drive.google.com/file/d/1-0gyDqHWcaUgjHvt_aM5Y8dn0XM8rDEC/view?usp=drivesdk", text: "Turn off the faucet while brushing your teeth."},
+  {img: "https://drive.google.com/file/d/1--fvzAvoOgW3WLKFRFEwwJ92rkdO3D8u/view?usp=drivesdk", text: "Use natural light instead of electric lamps."},
+  {img: "https://drive.google.com/file/d/10-gVLuKlK--cup9TZr6GYhw1ei5uNwuf/view?usp=drivesdk", text: "Recycle and reuse whenever possible."}
+];
+
+function showCard(){
+  const card = cards[Math.floor(Math.random() * cards.length)];
+  document.getElementById("cardImage").src = card.img;
+  document.getElementById("caption").textContent = card.text;
+}
+
+// عرض بطاقة عند فتح الصفحة
+window.onload = showCard;
+</script>
+
+</body>
+</html>
